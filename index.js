@@ -1,0 +1,1 @@
+const question = require("./src/scripts/questions");
