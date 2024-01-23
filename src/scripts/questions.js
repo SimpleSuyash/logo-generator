@@ -1,12 +1,18 @@
+//importing the inquirer package
+const inquirer = require("inquirer");
+//importing inquirer-maxlength-input-prompt package
+const maxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
+inquirer.registerPrompt("input-max3", maxLengthInputPrompt);
+//creating questions for inquirer prompts
 const questions =[
     {
-        type: "input",
+        type: "input-max3",
         name: "text",
-        message: "What is the three logo characters?",
+        message: "What are the the logo characters?",
         maxLength: 3,
         validate: answer=> {
             if(answer.trim()===""){
-                return "Please enter upto 3 characters for logo.";
+                return "Please enter valid characters for logo.";
             }
             return true;
         }
@@ -41,4 +47,5 @@ const questions =[
     },
 ];
 
+//exporting the questions array
 module.exports = questions;
