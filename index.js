@@ -6,6 +6,28 @@ const questions = require("./lib/questions");
 const inquirer = require("inquirer");
 const ora = require("ora");
 
+//importing generateHTML module
+const renderLogo = require("./lib/generateHTML");
+//importing fs node module
+const fs = require("node:fs");
+
+
+// Writes README file in the root folder
+function writeToFile(fileName, data){
+    //Before we make our async call, we’ll start the spinner
+    const spinner = ora("Getting headlines...").start();
+    fs.writeFile(`./${fileName}.html`, data, err =>{
+        if (err){
+            // console.log(err);
+            spinner.fail(err);
+        }
+        else{
+            const filePath= fs.realpathSync("./");
+            // console.log(`${filePath}\\${fileName}.html has been created.`);
+            spinner.succeed(`${filePath}\\${fileName}.html has been created.`);
+        }
+    });
+  }
 // Creates a function to initialize app
 function init() {
     //loading the inquirer to initiate the prompts
@@ -14,6 +36,7 @@ function init() {
         .then(
             response=>{
                 console.log(response);
+                writeToFile("generated-logo", renderLogo(response) );
             }
         )
         .catch((error) => {
