@@ -14,15 +14,15 @@ const fs = require("node:fs");
 //includes info, success, warning and error
 const logSymbols = require("log-symbols");
 
-// Writes README file in the root folder
+// Writes logo.svg file in the output folder
 function writeToFile(data){
-    fs.writeFile(`./output/generated-logo.svg`, data, err =>{
+    fs.writeFile(`./output/logo.svg`, data, err =>{
         if (err){
             console.error(`${logSymbols.error}`, `\x1b[3;31m${err}\x1b[0m`);
         }
         else{
             const filePath= fs.realpathSync("./output/");
-            console.log(`${logSymbols.success}`, `\x1b[3;92m${filePath}\\generated-logo.svg has been created!\x1b[0m`);
+            console.log(`${logSymbols.success}`, `\x1b[3;92mGenerated ${filePath}\\logo.svg!\x1b[0m`);
         }
     });
 }
