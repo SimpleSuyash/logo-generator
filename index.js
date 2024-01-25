@@ -4,7 +4,28 @@ const questions = require("./lib/questions");
 //Including packages needed for this application
 //importing inquirer node package
 const inquirer = require("inquirer");
-const ora = require("ora");
+
+//importing generateSVG module
+const renderLogo = require("./lib/generateSVG");
+//importing fs node module
+const fs = require("node:fs");
+
+//Colored symbols for various log levels
+//includes info, success, warning and error
+const logSymbols = require("log-symbols");
+
+// Writes README file in the root folder
+function writeToFile(data){
+    fs.writeFile(`./output/generated-logo.svg`, data, err =>{
+        if (err){
+            console.error(`${logSymbols.error}`, `\x1b[3;31m${err}\x1b[0m`);
+        }
+        else{
+            const filePath= fs.realpathSync("./output/");
+            console.log(`${logSymbols.success}`, `\x1b[3;92m${filePath}\\generated-logo.svg has been created!\x1b[0m`);
+        }
+    });
+}
 
 // Creates a function to initialize app
 function init() {
@@ -14,25 +35,19 @@ function init() {
         .then(
             response=>{
                 console.log(response);
+                writeToFile(renderLogo(response) );
             }
         )
         .catch((error) => {
             if (error.isTtyError) {
-                console.log("Prompt couldn't be rendered in the current environment");
+                console.error(`${logSymbols.error}`, `\x1b[3;31mPrompt couldn't be rendered in the current environment\x1b[0m`);
             } else {
-                console.log(error);
-                console.log("Something else went wrong");
+                console.error(`${logSymbols.error}`, `\x1b[3;31m${error}\x1b[0m`);
+                console.error(`${logSymbols.error}`, `\x1b[3;31mSomething else went wrong\x1b[0m`);
             }
         });
         
 }
-/*
-//Before we make our async call, we’ll start the spinner
-const spinner = ora("Getting headlines...").start();
-//-----const $homepage = await getPageContents(homepageUrl);
-//Once the call is done, we can stop the spinner
-spinner.succeed("ESPN headlines received");
 
-*/
 // Calling init function to initialize app
 init();
