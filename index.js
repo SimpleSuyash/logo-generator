@@ -6,7 +6,7 @@ const questions = require("./lib/questions");
 const inquirer = require("inquirer");
 
 //importing generateSVG module
-const renderLogo = require("./lib/generateSVG");
+const {generateSVG} = require("./lib/generateSVG");
 //importing fs node module
 const fs = require("node:fs");
 
@@ -35,7 +35,7 @@ function init() {
         .then(
             response=>{
                 console.log(response);
-                writeToFile(renderLogo(response) );
+                writeToFile(generateSVG(response) );
             }
         )
         .catch((error) => {
@@ -46,7 +46,6 @@ function init() {
                 console.error(`${logSymbols.error}`, `\x1b[3;31mSomething else went wrong\x1b[0m`);
             }
         });
-        
 }
 
 // Calling init function to initialize app
