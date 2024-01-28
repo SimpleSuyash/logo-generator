@@ -83,10 +83,8 @@ Screenshot showing generated logo.svg file
 ![generated README.md file](./assets/images/svg-logo.png)
 
 ## Demo
+https://github.com/SimpleSuyash/logo-generator/assets/video/demo.mp4
 
-<video controls autoplay muted loop>
-    <source src="./assets/video/demo.mp4" type="video/mp4">
-</video> 
 
 
 
