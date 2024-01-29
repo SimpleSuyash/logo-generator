@@ -83,6 +83,8 @@ Screenshot showing generated logo.svg file
 ![generated README.md file](./assets/images/svg-logo.png)
 
 ## Demo
+
 https://github.com/SimpleSuyash/logo-generator/assets/149545043/9c1f8b30-5946-492e-adc5-55ddd844abf2
+
 
 
