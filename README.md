@@ -54,7 +54,7 @@ After installation of all the required plugins and packages, change the `test` t
 
 ## Usage
 
-- Open a new terminal in `Command Prompt` or `Git Bash` or `Visual Studio Code`
+- Open a new terminal in `Command Prompt` or `Git Bash` or `Visual Studio Code Terminal`
 - Change directory to the parent folder of `index.js`
 - Initiate the `Inquirer` by tying the following
     ```
