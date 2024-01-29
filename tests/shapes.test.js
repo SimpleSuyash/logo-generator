@@ -1,7 +1,17 @@
 //importing Triangle, Square and Circl from shapes
-const {Triangle, Square, Circle} = require("../lib/shapes");
+const {Triangle, Square, Circle, Shape} = require("../lib/shapes");
 
 describe("Shape", ()=>{
+    //testing parent class Shape's method
+    describe("", ()=>{
+        test("should throw an error", ()=>{
+            const err = new Error("Child classes must override render method in Shape Class.");
+            const shape = new Shape("blUe");
+            const render = () => shape.render();
+            expect(render).toThrowError(err);
+        });
+    });
+
     //testing Triangle rendering
     describe("Render Triangle", ()=>{
         test("should render svg triangle", ()=>{
