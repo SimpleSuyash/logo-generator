@@ -11,7 +11,7 @@
 This app creates a simple SVG logo consisting either a triangle or a square or a circle and some text on it.
 
 ##  Description
-A Logo is an eye catching image that serves as a unique brand identifier of any organization. It can vary from simple to very complex design-wise, limited only by artistic capabilities. But for our usage in the github projects, this app creates a simple logo of 300px width and 200px height, featuring a shape of either a Triangle, or a Square or a Circle with a text, which is upto 3 characters long, on top. 
+A Logo is an eye catching image that serves as a unique brand identifier of any organization. It can vary from simple to very complex design-wise, limited only by artistic capabilities. But for our usage in the github projects, this app creates a `simple logo` of `300px width` and `200px height`, featuring a shape of either a `Triangle`, or a `Square` or a `Circle` with a `text`, which is `upto 3 characters` long, on top. 
 
 By creating this project, I learnt the `inquirer npm package`, and also learnt to install the `Node.js` and the `npm`, and build and use `modules` which enable us to separate logically distinct part of the script into different scripting files. I also learnt to use various included packages in `node_modules` such as `chalk`, `figures`, `log-symbols`.
 
@@ -63,7 +63,7 @@ After installation of all the required plugins and packages, change the `test` t
 - Answer the prompts shown to generate the `logo.svg` file              
 ![Initiating Inquirer ](./assets/images/run-inquirer.png)   
 
-- To select an answer from a list, use ↑ and ↓ signs and press *Enter*
+- To select an answer from a list, use ↑ and ↓ keys and press *Enter*
 - Inititate the `Jest` unit testing by typing in the following
     ```
     npm run test
