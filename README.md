@@ -15,7 +15,7 @@ A Logo is an eye catching image that serves as a unique brand identifier of any 
 
 By creating this project, I learnt the `inquirer npm package`, and also learnt to install the `Node.js` and the `npm`, and build and use `modules` which enable us to separate logically distinct part of the script into different scripting files. I also learnt to use various included packages in `node_modules` such as `chalk`, `figures`, `log-symbols`.
 
-I also learnt [`ANSI Escape Codes`](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797), which helps to change the style of console log text. A also learnt to use `valiate-color` to validate CSS defined colour values, `inquirer-maxlength-input-prompt` to validate input length and `jest` package for unit testing.
+I also learnt [`ANSI Escape Codes`](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797), which helps to change the style of console log text. A also learnt to use `valiate-color` to validate CSS defined colour values, `inquirer-maxlength-input-prompt` to validate input length and `jest` package for unit testing. Finally, I learnt to implement `async` and `await` functions.
 
 ## Table of Contents
 
