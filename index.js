@@ -24,40 +24,11 @@ async function writeToFile(data){
     }catch(err){
         console.error(`${logSymbols.error}`, `\x1b[3;31m${err}\x1b[0m`);
     }
-    /*
-    fs.writeFile(`./output/logo.svg`, data, err =>{
-        if (err){
-            console.error(`${logSymbols.error}`, `\x1b[3;31m${err}\x1b[0m`);
-        }
-        else{
-            const filePath= fs.realpathSync("./output/");
-            console.log(`${logSymbols.success}`, `\x1b[3;92mGenerated ${filePath}\\logo.svg!\x1b[0m`);
-        }
-    });
-    */
 }
 
 // Creates a function to initialize app
 async function init() {
     //loading the inquirer to initiate the prompts
-    /*
-    inquirer
-        .prompt(questions)
-        .then(
-            response=>{
-                console.log(response);
-                writeToFile(generateSVG(response) );
-            }
-        )
-        .catch((error) => {
-            if (error.isTtyError) {
-                console.error(`${logSymbols.error}`, `\x1b[3;31mPrompt couldn't be rendered in the current environment\x1b[0m`);
-            } else {
-                console.error(`${logSymbols.error}`, `\x1b[3;31m${error}\x1b[0m`);
-                console.error(`${logSymbols.error}`, `\x1b[3;31mSomething else went wrong\x1b[0m`);
-            }
-        });
-    */
     try{
         const response = await inquirer.prompt(questions);
         console.log(response);
